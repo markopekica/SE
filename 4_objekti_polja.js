@@ -213,7 +213,7 @@ console.assert(napredna_pretraga(studenti, "ić ko la ri"), 3) // ! zadnji stude
 
 
 //
-//
+//      shit seems way too advanced for me
 // 6
 // Osmisli i oblikuj objekt po vlastitom odabiru koji sadrži barem jednu agregaciju i
 // kompoziciju, te veze na jedan i na više .
@@ -222,32 +222,23 @@ console.assert(napredna_pretraga(studenti, "ić ko la ri"), 3) // ! zadnji stude
 //
 // covik -> laptop = aggregation    (A uses B)
 // laptop -> CPU = composition  (A owns B)
-function Covik(ime, godine, pc){
-    this.ime = ime
-    this.godine = godine
-    this.pc = [pc]
-}
+let covik = [   // prilicno sam siguran da to nije to...
+    {
+        name: "cov1",
+        lap: [
+            {
+                name: "T480",
+                proc: {
+                    name: "idk4",
+                    power: 10
+                }
+            }
+        ]
+    }
+]
 
-let mario = new Covik("mario", 1000)    // agregacija; covik moze bez laptopa
-console.log(mario)
-
-function Laptop(brand, model, cpu){
-    this.brand = brand
-    this.model = model
-    this.cpu = cpu
-}
-function CPU(brand, model){ // kao kompozicija, al ne dobra
-    this.brand = brand
-    this.model = model
-}
-
-let idk = new CPU("Intel", "i5-7300U")
-let T470 = new Laptop("Lenovo", "T470", idk)
-let mark = new Covik("mark", 10, T470)
-console.log(mark)
-
-let proc2 = new CPU("aH", "76-r")
-let lap2 = new Laptop("idk man", "01", proc2)
-mark['pc'].push(lap2)
-//console.log(mark.pc)
-console.log(mark)
+//
+//
+// 6 dodam novo rjesenje ako kad stignem da ne izgorim
+// pretpostavljam da treba raditi objekte sa konstruktorima pa one micine i zvati
+// sve one Object.prototype.isProtOf...

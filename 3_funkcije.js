@@ -56,38 +56,28 @@ console.log(sameChars("something weird        happening")) */
 
 
 //
-//
-//3
+// nisam skoluvala
+// 3
 // ackermann f()
-let Av = (m, n) => {
+let a = ( m, n ) => {
 
-    console.log("m=" + m + ", n=" + n)
-    if( m>0 ){
+    //console.log("m=" + m + ", n=" + n)
+    
+    if( m > 0 ){
 
         if( n == 0 )
-            return A(m-1, 1)
+            return a( m-1, 1 )
 
-        return A((m-1), /* A */(m,n-1))
+        return a( ( m-1 ), a( m, n-1 ) )
     
     } //else if( m==0 )
     
     return n+1
-    
-    
-    /* if(m==0){
-        return n + 1
-    }
-    else if((m>0) && (n==0)){
-        return A(m-1, 1)
-    }
-    else if((m>0) && (n > 0)){
-        return A(m - 1, A(m, n - 1))
-    } */
 
 }
 
 
-console.log(A(0, 5))
-console.log(A(5, 0))
-console.log(A(3, 6))
-console.log(A(3, 3))
+console.log(a(0, 5)) // → 6
+//console.log(a(5, 0)) // → 65533
+console.log(a(3, 6)) // → 509
+console.log(a(3, 3)) // → 61
